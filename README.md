@@ -21,6 +21,29 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
+## setting
+
+Make Superuser: Open terminal and use following command to make yourself superuser.
+```sudo su```
+Install Required Packages: Use the following command to Install the required packages of ImageMagick and Imagick PHP extension.
+```sudo apt install php php-common gcc```
+Install ImageMagick extension: Now install the ImageMagick PHP extension by using the following command.
+```sudo apt install imagemagick```
+Install Imagick extension: After completion of ImageMagick package, the Imagick PHP extension will install.
+```sudo apt install php-imagick```
+Restart Apache Server: Restart the apache server by using the following command.
+```sudo systemctl restart apache2```
+Verify the Imagick extension: The Imagick extension can be verified by using the following command.
+```php -m | grep imagick```
+
+> [!NOTE] getting error : attempt to perform an operation not allowed by the security policy `PDF' @ error/constitute.c/IsCoderAuthorized/413
+> Open the file 
+>```sudo nano /etc/ImageMagick-6/policy.xml```
+>find and edit the line
+><policy domain="coder" rights="none" pattern="PDF" />
+>to :
+><policy domain="coder" rights="read|write" pattern="PDF" />
+
 ## Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
